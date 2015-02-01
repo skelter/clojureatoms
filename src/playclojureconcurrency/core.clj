@@ -2,10 +2,15 @@
 
 ;; Threads and Atoms
 ;;
-;; Atoms are for uncoordinated access from multiple threads.
+;; Atoms are for uncoordinated* access from multiple threads.
 ;; The primary functions for using them are reset! and swap!
 ;; reset! brute-forces a new value.
 ;; swap! sets a new value using a function that takes the old value.
+;;
+;; * 'Uncoordinated' here means you are not hoping to coordinate
+;; changes to two different things.  (If you need that, use refs instead
+;; of atoms and read about STM, dosync, etc.)
+;;
 ;;
 ;; Load this file into a repl, kick off the threads, and watch the state.
 ;; @mystate
