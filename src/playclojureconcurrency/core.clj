@@ -8,7 +8,9 @@
 ;; swap! sets a new value using a function that takes the old value.
 ;;
 ;; Load this file into a repl, kick off the threads, and watch the state.
+;; @mystate
 ;; You might also fire up jconsole and watch threads and cpu usage.
+;; Use swap! or reset! to change the f function to do something different.
 ;; When you are done cooking, reset! the continueflag to false and
 ;; watch the threads wrap up.
 
@@ -68,6 +70,7 @@
   "Creates the thread, but does not start it."
   (Thread. heartbeat))
 
+;@mystate in between these a few times to get an idea of what's happening in that atom.
 ;(.start upthread)
 ;(.start downthread)
 ;(.start mythread)
